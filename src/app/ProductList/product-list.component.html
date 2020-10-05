@@ -1,0 +1,35 @@
+
+<mat-card>
+        <mat-card-header>
+          <mat-toolbar class="toolbar">
+            <mat-icon (click)="addBook()">Add Product+</mat-icon>
+          </mat-toolbar>
+        </mat-card-header>
+        
+        
+        
+        <mat-card-content>
+        <div class="container">
+        <div class="table-responsive">
+          <table  class="table table-hover table-xs  table-dark">
+            <thead class="table-primary">
+                  
+                    <th>Product Name</th>
+                    <th>Product Description</th> 
+                    <th>Product Count</th>
+                    <th>Update</th>
+                    <th>Delete</th>
+                    
+            </thead>
+            <tr  *ngFor="let b of products" > 
+                    <td>{{b.productName}}</td>
+                    <td>{{b.productDescription}}</td>
+                    <td>{{b.productCount}}</td>
+                    <td><input id="{{b._id}}" type="button" class="btn btn-success" value="Edit"  (click)="editBook($event,b.productName,b.productDescription,b.productCount)"></td>
+                    <td><input id="{{b._id}}" type="button" class="btn btn-danger" value="Delete"  (click)="deleteBook($event)"></td>
+            </tr>
+          </table>
+          </div>
+        </div>
+      </mat-card-content>
+</mat-card>

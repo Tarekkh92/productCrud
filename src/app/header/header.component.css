@@ -1,0 +1,14 @@
+h1{
+    margin:0;
+    font-weight: bold;
+    color:white;
+    
+}
+nav{
+    margin-top: 20px;;
+    position: absolute;
+    top:0px;
+    left:50px;
+    font-size: xx-large;
+    
+}

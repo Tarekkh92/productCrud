@@ -1,0 +1,18 @@
+<form [formGroup]="editForm" (ngSubmit)="editBook()" >
+        <label>Edit Book Info</label>
+        <mat-card-content>
+            <br/>
+            <input [formControl]="productNameControl" type="text" placeholder="Product Name" required>
+            <span [hidden]="productNameControl.pristine || productNameControl.valid"> Product  Name is required</span>
+            <br/>
+            <input [formControl]="productDescriptionControl" type="text" placeholder=" Product Description "  required>
+            <span [hidden]="productDescriptionControl.pristine || productDescriptionControl.valid"> Product Description  is required</span>
+            <br/>
+            <input [formControl]="productCountControl" type="text" placeholder="Product Count "required>
+            <span [hidden]="productCountControl.pristine || productCountControl.valid"> Product Count  is required</span>
+            <br/>
+            <br/>
+            <button type="submit" [disabled]="editForm.invalid" class="btn btn-success" >Save</button>
+            <button type="button" class="btn btn-default" (click)="onNoClick()">Cancel</button>
+        </mat-card-content>
+</form>

@@ -1,0 +1,20 @@
+     <form [formGroup]="SaveForm" (ngSubmit)="addBook()" >
+            <label>Save Book Info</label>
+            <mat-card-content>
+                <br/>
+                <input matInput [formControl]="productNameControl" type="text" placeholder="product Name" required>
+                <span [hidden]="productNameControl.pristine || productNameControl.valid"> product Name is required</span>
+                <br/>
+                <input [formControl]="productDescriptionControl" type="text" placeholder=" product Description " required>
+                <span [hidden]="productDescriptionControl.pristine || productDescriptionControl.valid"> product Description is required</span>
+                <br/>
+                <input matInput [formControl]="productCountControl" type="text" placeholder="product Name" required>
+                <span [hidden]="productCountControl.pristine || productCountControl.valid"> product count is required</span>
+                <br/>
+                <br/>
+
+                <button type="submit" [disabled]="SaveForm.invalid" class="btn btn-success"  >Save</button>
+                <button type="button" class="btn btn-default" (click)="onNoClick()">Cancel</button>
+            </mat-card-content>
+    </form>
+  
